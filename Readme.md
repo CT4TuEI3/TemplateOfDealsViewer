@@ -1,6 +1,6 @@
 # Тестовое задание iOS (NTPro)
 
-![NTProgress_logo.png](%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20iOS%20(NTPro)%203e4235f95ca8459eb41a2378d875b019/NTProgress_logo.png)
+![NTProgress_logo.png](NTProgress_logo.png)
 
 ## 📈 Легенда
 
