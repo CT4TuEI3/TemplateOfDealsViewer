@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "23046B13-9C93-4B2D-AE72-062E59B1C452"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "38958FA4-7E62-4B23-B0CF-F77F8B16BF29"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TemplateOfDealsViewer/HeaderCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30">
+            <Locations>
+               <Location
+                  uuid = "38958FA4-7E62-4B23-B0CF-F77F8B16BF29 - 12a1467d3e99fd1d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TemplateOfDealsViewer.HeaderCell.didTapInstrument() -&gt; ()"
+                  moduleName = "TemplateOfDealsViewer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/CT4TuEI3/Documents/GitHub/TemplateOfDealsViewer/TemplateOfDealsViewer/HeaderCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "38958FA4-7E62-4B23-B0CF-F77F8B16BF29 - 12a1467d3e99fd3e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TemplateOfDealsViewer.HeaderCell.didTapInstrument() -&gt; ()"
+                  moduleName = "TemplateOfDealsViewer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/CT4TuEI3/Documents/GitHub/TemplateOfDealsViewer/TemplateOfDealsViewer/HeaderCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "69F7214C-8227-455E-90BF-C476ABD5D67F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TemplateOfDealsViewer/Header.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "tappedAction()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CC1301B0-E7A4-41BB-B7AF-939A74C63FB6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TemplateOfDealsViewer/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "pressedSideBtn()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B0E423DF-7A33-40FE-A85B-F9190881A584"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TemplateOfDealsViewer/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "sortedData(mode:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C62F3ABA-D308-4C83-ADC9-4E606E715539"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TemplateOfDealsViewer/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "sortedData(mode:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C62F3ABA-D308-4C83-ADC9-4E606E715539 - 505f6c98626a9fc2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TemplateOfDealsViewer.ViewController.sortedData(mode: TemplateOfDealsViewer.ViewController.DealsSortedType) -&gt; ()"
+                  moduleName = "TemplateOfDealsViewer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/CT4TuEI3/Documents/GitHub/TemplateOfDealsViewer/TemplateOfDealsViewer/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "1063">
+               </Location>
+               <Location
+                  uuid = "C62F3ABA-D308-4C83-ADC9-4E606E715539 - 1fbadf88002ccdc0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #6 (TemplateOfDealsViewer.Deal, TemplateOfDealsViewer.Deal) -&gt; Swift.Bool in TemplateOfDealsViewer.ViewController.sortedData(mode: TemplateOfDealsViewer.ViewController.DealsSortedType) -&gt; ()"
+                  moduleName = "TemplateOfDealsViewer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/CT4TuEI3/Documents/GitHub/TemplateOfDealsViewer/TemplateOfDealsViewer/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "C62F3ABA-D308-4C83-ADC9-4E606E715539 - 505f6c98626a9fc2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TemplateOfDealsViewer.ViewController.sortedData(mode: TemplateOfDealsViewer.ViewController.DealsSortedType) -&gt; ()"
+                  moduleName = "TemplateOfDealsViewer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/CT4TuEI3/Documents/GitHub/TemplateOfDealsViewer/TemplateOfDealsViewer/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "1062">
+               </Location>
+               <Location
+                  uuid = "C62F3ABA-D308-4C83-ADC9-4E606E715539 - 505f6c98626a9fc2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TemplateOfDealsViewer.ViewController.sortedData(mode: TemplateOfDealsViewer.ViewController.DealsSortedType) -&gt; ()"
+                  moduleName = "TemplateOfDealsViewer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/CT4TuEI3/Documents/GitHub/TemplateOfDealsViewer/TemplateOfDealsViewer/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "1046">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
