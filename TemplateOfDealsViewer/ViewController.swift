@@ -1,25 +1,24 @@
 import UIKit
 
-class ViewController: UIViewController {
-    
-    private enum DealsSortedType {
-        case date
-        case instrument
-        case price
-        case amount
-        case side
-    }
-    
+private enum DealsSortedType {
+    case date
+    case instrument
+    case price
+    case amount
+    case side
+}
+
+final class ViewController: UIViewController {
     
     // MARK: Private property
     
     private let server = Server()
     private var model: [Deal] = []
-    private var currentDealSorttedType: DealsSortedType = .date
-    private var instrumentSelected = false
-    private var priceSelected = false
-    private var amountSelected = false
-    private var sideSelected = false
+    private var currentDealSortedType: DealsSortedType = .date
+    private var isInstrumentSelected = false
+    private var isPriceSelected = false
+    private var isAmountSelected = false
+    private var isSideSelected = false
     
     
     // MARK: UI Elements
@@ -39,77 +38,84 @@ class ViewController: UIViewController {
         getDataFromServer()
         setupUI()
     }
-    
-    
-    // MARK: Private methods
-    
-    private func getDataFromServer() {
-        server.subscribeToDeals { deals in
-            self.model.append(contentsOf: deals)
-            self.sortedData(mode: self.currentDealSorttedType)
-            self.tableView.reloadData()
+}
+
+
+// MARK: Private methods
+
+private
+extension ViewController {
+    func getDataFromServer() {
+        let queue = DispatchQueue(label: "GetDeals", attributes: .concurrent)
+        server.subscribeToDeals { [weak self] deals in
+            guard let self else { return }
+            queue.async(flags: .barrier) {
+                self.model.append(contentsOf: deals)
+                self.sortedData(mode: self.currentDealSortedType)
+            }
         }
     }
     
-    private func setupUI() {
+    func setupUI() {
         navigationItem.title = "Deals"
         settingsTableView()
         settingsStackView()
         configureButtons()
     }
     
-    private func sortedData(mode: DealsSortedType) {
+    func sortedData(mode: DealsSortedType) {
         switch mode {
             case .date:
                 model.sort() {$0.dateModifier < $1.dateModifier}
                 
             case .instrument:
-                if instrumentSelected {
+                if isInstrumentSelected {
                     model.sort() { $0.instrumentName < $1.instrumentName}
                 } else {
                     model.sort() { $0.instrumentName > $1.instrumentName}
                 }
                 
             case .price:
-                if priceSelected == false {
-                    model.sort() {$0.price > $1.price}
-                } else {
+                if isPriceSelected {
                     model.sort() {$0.price < $1.price}
+                } else {
+                    model.sort() {$0.price > $1.price}
                 }
                 
             case .amount:
-                if amountSelected {
+                if isAmountSelected {
                     model.sort() {$0.amount < $1.amount}
                 } else {
                     model.sort() {$0.amount > $1.amount}
                 }
                 
             case .side:
-                if sideSelected {
+                if isSideSelected {
                     model = model.filter({ $0.side == .sell }) + model.filter({ $0.side == .buy})
                 } else {
                     model = model.filter({ $0.side == .buy }) + model.filter({ $0.side == .sell})
                 }
         }
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
-    private func settingsTableView() {
-        tableView.register(UINib(nibName: DealCell.reuseIidentifier,
-                                 bundle: nil),
-                           forCellReuseIdentifier: DealCell.reuseIidentifier)
+    func settingsTableView() {
+        tableView.register(UINib(nibName: DealCell.reuseIdentifier, bundle: nil),
+                           forCellReuseIdentifier: DealCell.reuseIdentifier)
         tableView.dataSource = self
         tableView.delegate = self
     }
     
-    private func settingsStackView() {
+    func settingsStackView() {
         topButtonsStackView.addArrangedSubview(instrumentSortButton)
         topButtonsStackView.addArrangedSubview(priceSortButton)
         topButtonsStackView.addArrangedSubview(amountSortButton)
         topButtonsStackView.addArrangedSubview(sideSortButton)
     }
     
-    private func configureButtons() {
+    func configureButtons() {
         instrumentSortButton.backgroundColor = .systemBackground
         instrumentSortButton.setTitle("Instrument", for: .normal)
         instrumentSortButton.setTitleColor(.black, for: .normal)
@@ -138,16 +144,19 @@ class ViewController: UIViewController {
         sideSortButton.titleLabel?.font = .systemFont(ofSize: 16)
         sideSortButton.addTarget(self, action: #selector(pressedSideBtn), for: .touchUpInside)
     }
-    
-    
-    // MARK: Actions
-    
+}
+
+
+// MARK: Actions
+
+private
+extension ViewController {
     @objc
-    private func pressedInstrumentBtn() {
+    func pressedInstrumentBtn() {
         configureButtons()
-        currentDealSorttedType = .instrument
-        instrumentSelected = !instrumentSelected
-        if instrumentSelected {
+        currentDealSortedType = .instrument
+        isInstrumentSelected.toggle()
+        if isInstrumentSelected {
             instrumentSortButton.setTitle("⬇️Instrument", for: .normal)
         } else {
             instrumentSortButton.setTitle("⬆️Instrument", for: .normal)
@@ -155,35 +164,35 @@ class ViewController: UIViewController {
     }
     
     @objc
-    private func pressedPriceBtn() {
+    func pressedPriceBtn() {
         configureButtons()
-        currentDealSorttedType = .price
-        priceSelected = !priceSelected
-        if priceSelected {
-            priceSortButton.setTitle("⬇️Price", for: .normal)
-        } else {
+        currentDealSortedType = .price
+        isPriceSelected.toggle()
+        if isPriceSelected {
             priceSortButton.setTitle("⬆️Price", for: .normal)
-        }
-    }
-    
-    @objc
-    private func pressedAmountBtn() {
-        configureButtons()
-        currentDealSorttedType = .amount
-        amountSelected = !amountSelected
-        if amountSelected {
-            amountSortButton.setTitle("⬇️Amount", for: .normal)
         } else {
-            amountSortButton.setTitle("⬆️Amount", for: .normal)
+            priceSortButton.setTitle("⬇️Price", for: .normal)
         }
     }
     
     @objc
-    private func pressedSideBtn() {
+    func pressedAmountBtn() {
         configureButtons()
-        currentDealSorttedType = .side
-        sideSelected = !sideSelected
-        if amountSelected {
+        currentDealSortedType = .amount
+        isAmountSelected.toggle()
+        if isAmountSelected {
+            amountSortButton.setTitle("⬆️Amount", for: .normal)
+        } else {
+            amountSortButton.setTitle("⬇️Amount", for: .normal)
+        }
+    }
+    
+    @objc
+    func pressedSideBtn() {
+        configureButtons()
+        currentDealSortedType = .side
+        isSideSelected.toggle()
+        if isSideSelected {
             sideSortButton.setTitle("⬇️ Side", for: .normal)
         } else {
             sideSortButton.setTitle("⬆️ Side", for: .normal)
@@ -200,7 +209,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: DealCell.reuseIidentifier, for: indexPath) as? DealCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: DealCell.reuseIdentifier,
+                                                 for: indexPath) as? DealCell
         cell?.configure(model: model[indexPath.row])
         return cell ?? UITableViewCell()
     }
