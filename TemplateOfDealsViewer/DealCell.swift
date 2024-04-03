@@ -1,7 +1,7 @@
 import UIKit
 
-class DealCell: UITableViewCell {
-    static let reuseIidentifier = "DealCell"
+final class DealCell: UITableViewCell {
+    static let reuseIdentifier = "DealCell"
     
     // MARK: UI elements
     
